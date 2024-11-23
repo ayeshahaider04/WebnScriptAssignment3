@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const StudySession = require('../models/StudySession');
+const StudySession = require('../models/studysession');
 
 router.get('/', async (req, res) => {
   const sessions = await StudySession.find().sort({ date: 1 });
