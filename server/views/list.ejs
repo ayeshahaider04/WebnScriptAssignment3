@@ -1,0 +1,15 @@
+<%- include('partials/header') %>
+<h1>Study Planner</h1>
+<ul>
+  <% sessions.forEach(session => { %>
+    <li>
+      <strong><%= session.title %></strong>: <%= session.description %>
+      (<%= session.duration %> hours on <%= session.date.toDateString() %>)
+      <form action="/delete/<%= session._id %>" method="POST" style="display:inline;">
+        <button type="submit">Delete</button>
+      </form>
+      <a href="/edit/<%= session._id %>">Edit</a>
+    </li>
+  <% }) %>
+</ul>
+<%- include('partials/footer') %>
