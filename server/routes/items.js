@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const StudySession = require('../models/studysession');
+const StudySession = require('../models/StudySession');
 
 router.get('/', async (req, res) => {
   const sessions = await StudySession.find().sort({ date: 1 });
@@ -30,5 +30,6 @@ router.post('/delete/:id', async (req, res) => {
 });
 
 module.exports = router;
+
 
 
